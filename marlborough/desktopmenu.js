@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Four Top Links
-
 const fundsMain = document.querySelector('[main-menu="funds"]');
 const solutionsMain = document.querySelector('[main-menu="solutions"]');
 const insightsMain = document.querySelector('[main-menu="insights"]');
@@ -110,45 +109,22 @@ if (menuBottom) {
   menuBottom.classList.remove("active");
 }
 
-// nav bottom animation
-
-// Container function
-// function openMenuContainer() {
-//   let tl = gsap.timeline();
-//   tl.set(menuBottom, {
-//     display: "flex",
-//     height: "0px"
-//   }).to(menuBottom, {
-//     duration: 0.75,
-//     height: "auto",
-//     ease: "ease-in"
-//   });
-// }
-
 function openMenuContainer() {
   let tl = gsap.timeline();
 
   if (menuBottom.offsetHeight === 0) {
     tl.set(menuBottom, {
       display: "flex",
-      height: "0px",
+      height: "0px"
     });
   }
 
   tl.to(menuBottom, {
     duration: 0.75,
     height: "auto",
-    ease: "ease-in",
+    ease: "ease-in"
   });
 }
-
-// function openMenuContainerBack() {
-//   let tl = gsap.timeline();
-
-//   tl.set(menuBottom, {
-//     height: "0"
-//   });
-// }
 
 function openMenuContainerBack() {
   menuBottom.style.height = "0";
@@ -163,7 +139,7 @@ function MenuHoverMainTop() {
     duration: 0,
     backgroundColor: brandColorDark,
     color: "#78888f",
-    ease: "ease-out",
+    ease: "ease-out"
   });
 }
 
@@ -173,7 +149,7 @@ function MenuHoverOutMainTop() {
     duration: 0,
     backgroundColor: "transparent",
     color: brandColorDark,
-    ease: "ease-out",
+    ease: "ease-out"
   });
 }
 
@@ -183,7 +159,7 @@ function logoAnimation() {
   tl.to(mainLogo, {
     duration: 0,
     color: brandWhite,
-    ease: "ease-out",
+    ease: "ease-out"
   });
 }
 
@@ -192,7 +168,7 @@ function logoAnimationBack() {
   tl.to(mainLogo, {
     duration: 0,
     color: brandColorDark,
-    ease: "ease-out",
+    ease: "ease-out"
   });
 }
 
@@ -402,6 +378,13 @@ let insightsCTWrapperThreeLink = Array.from(
   document.querySelectorAll('[insights="CTWrapperThree-link"]')
 );
 
+let whyCF = document.querySelector('[why="whyCF"]');
+// WhyDesktop
+let whyCFWrapper = Array.from(whyCF.querySelectorAll('[whyyd="whyCF-group"]'));
+
+let whyCLWrapper = Array.from(document.querySelectorAll('[why="whyCL-group"]'));
+
+// console.log(whyCFWrapper, whyCLWrapper);
 // funds
 
 unhideConsecutiveColumn(fundsCFGroup, fundsCLGroup);
@@ -425,7 +408,9 @@ unhideConsecutiveColumn(insightsCFGroup, insightsCSGroup);
 unhideConsecutiveColumn(insightsCSWrapperOneLink, insightsCTWrapperOneLink);
 unhideConsecutiveColumn(insightsCSWrapperTwoLink, insightsCTWrapperTwoLink);
 unhideConsecutiveColumn(insightsCSWrapperThreeLink, insightsCTWrapperThreeLink);
+// Why us
 
+unhideConsecutiveColumn(whyCFWrapper, whyCLWrapper);
 // closing function
 
 function closeeverythingfunction() {
@@ -573,16 +558,10 @@ $(menuwrapper).mouseleave(function () {
 $(insightsCFWrapper).hover(function () {
   $(insightsCSWrapper).addClass("active");
 });
-// $(insightsCSWrapper).hover(function () {
-//   $(insightsCTWrapper).addClass("active");
-// });
+
 $(insightsCFWrapper).hover(function () {
   $(insightsCTWrapper).find(".active").removeClass("active");
 });
-
-// $(insightsCFWrapper).hover(function () {
-//   $(insightsCTWrapper).removeClass("active");
-// });
 
 $(menuwrapper).mouseleave(function () {
   $(insightsCSWrapper).removeClass("active");
@@ -618,13 +597,14 @@ function addHoverOpacity(wrapperSelector) {
 
 addHoverOpacity('[opacitylogic="third-common"]');
 
+// Animation
 document.addEventListener("mousemove", function (event) {
-  var mouseX = event.clientX; // Get the mouse position on the x-axis
+  let mouseX = event.clientX; // Get the mouse position on the x-axis
 
-  var windowWidth = window.innerWidth; // Get the window width
-  var percentage = (mouseX / windowWidth) * 100; // Calculate the percentage
+  let windowWidth = window.innerWidth; // Get the window width
+  let percentage = (mouseX / windowWidth) * 100; // Calculate the percentage
 
-  var tubeInside = document.querySelector(".bordertopwrapper__tubeinside");
+  let tubeInside = document.querySelector(".bordertopwrapper__tubeinside");
   tubeInside.style.transition = "width  ease"; // Add transition property
   tubeInside.style.width = percentage + "%"; // Set the width of the element
 
