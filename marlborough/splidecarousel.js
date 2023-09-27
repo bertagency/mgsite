@@ -23,12 +23,18 @@ function oursponsorscarousel() {
       breakpoints: {
         991: {
           // Tablet
+            perPage: 2,
+            perMove: 1,
         },
         767: {
           // Mobile Landscape
+            perPage: 1,
+            perMove: 1,
         },
         479: {
           // Mobile Portrait
+            perPage: 1,
+            perMove: 1,
         },
       },
     }).mount();
