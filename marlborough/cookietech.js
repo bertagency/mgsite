@@ -134,7 +134,7 @@ function simpleUpdateThings() {
   }
 }
 
-audienceProfessionNav.addEventListener("click", simpleUpdateThings());
+audienceProfessionNav.addEventListener("click", simpleUpdateThings);
 
 // Controls HOW the modal Closes
 function closeAudienceModal() {
